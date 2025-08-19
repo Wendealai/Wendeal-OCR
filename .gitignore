@@ -1,4 +1,4 @@
-﻿# Python
+# Python
 __pycache__/
 *.pyc
 *.pyo
@@ -22,10 +22,15 @@ build/
 Thumbs.db
 
 # Web app runtime
-Zerox OCR/web_app/uploads/
-Zerox OCR/web_app/outputs/
-Zerox OCR/web_app/config.json
+web_app/uploads/
+web_app/outputs/
+web_app/config.json
 
 # Logs
 logs/
 *.log
+
+# Project runtime roots
+uploads/
+outputs/
+
