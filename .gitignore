@@ -1,0 +1,31 @@
+﻿# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.sqlite3
+.env
+.venv/
+venv/
+env/
+pip-wheel-metadata/
+*.egg-info/
+dist/
+build/
+
+# VSCode/Cursor
+.vscode/
+.history/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Web app runtime
+Zerox OCR/web_app/uploads/
+Zerox OCR/web_app/outputs/
+Zerox OCR/web_app/config.json
+
+# Logs
+logs/
+*.log

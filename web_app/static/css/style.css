@@ -1,0 +1,793 @@
+/* Zerox OCR Web App 样式 */
+
+:root {
+    --primary-color: #0d6efd;
+    --success-color: #198754;
+    --warning-color: #ffc107;
+    --danger-color: #dc3545;
+    --info-color: #0dcaf0;
+    --light-color: #f8f9fa;
+    --dark-color: #212529;
+    --border-radius: 0.5rem;
+    --transition-speed: 0.3s;
+}
+
+/* 全局样式 - 浅色主题 */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa !important; /* 浅灰色背景 */
+    line-height: 1.6;
+    color: #2c3e50 !important; /* 深灰色文字 */
+}
+
+/* 导航栏样式 - 浅色主题 */
+.navbar {
+    background-color: #ffffff !important; /* 白色导航栏 */
+    border-bottom: 1px solid #dee2e6;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.navbar-brand {
+    font-weight: 600;
+    font-size: 1.25rem;
+    color: #2c3e50 !important; /* 深灰色品牌文字 */
+}
+
+.navbar-nav .nav-link {
+    font-weight: 500;
+    transition: color var(--transition-speed) ease;
+    color: #495057 !important; /* 中灰色导航链接 */
+}
+
+.navbar-nav .nav-link:hover {
+    color: #1a252f !important; /* 深灰色悬停效果 */
+}
+
+.navbar-nav .nav-link.active {
+    color: #0d6efd !important; /* 蓝色激活状态 */
+}
+
+/* 卡片样式 - 浅色主题 */
+.card {
+    border: 1px solid #dee2e6;
+    border-radius: var(--border-radius);
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    transition: box-shadow var(--transition-speed) ease;
+    background-color: #ffffff !important; /* 白色卡片背景 */
+    color: #2c3e50 !important; /* 深灰色文字 */
+}
+
+.card:hover {
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.card-header {
+    border-radius: var(--border-radius) var(--border-radius) 0 0 !important;
+    border-bottom: 1px solid #dee2e6;
+    font-weight: 600;
+    background-color: #f8f9fa !important; /* 浅灰色头部背景 */
+    color: #1a252f !important; /* 深灰色头部文字 */
+}
+
+.card-body {
+    background-color: #ffffff !important; /* 白色卡片内容背景 */
+    color: #2c3e50 !important; /* 深灰色文字 */
+}
+
+/* 文件上传区域样式 - 浅色主题 */
+.upload-area {
+    border: 2px dashed #dee2e6;
+    border-radius: var(--border-radius);
+    background-color: #ffffff !important; /* 白色上传区域背景 */
+    transition: all var(--transition-speed) ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    color: #495057 !important; /* 中灰色文字 */
+}
+
+.upload-area:hover {
+    border-color: var(--primary-color);
+    background-color: rgba(13, 110, 253, 0.05);
+}
+
+.upload-area.dragover {
+    border-color: var(--success-color);
+    background-color: rgba(25, 135, 84, 0.1);
+    transform: scale(1.02);
+}
+
+.upload-content {
+    color: #495057 !important; /* 中灰色文字 */
+}
+
+.upload-area.dragover .upload-content {
+    transform: scale(1.05);
+}
+
+.upload-content {
+    transition: transform var(--transition-speed) ease;
+}
+
+/* 按钮样式 */
+.btn {
+    border-radius: var(--border-radius);
+    font-weight: 500;
+    transition: all var(--transition-speed) ease;
+    border: none;
+    padding: 0.5rem 1rem;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.15);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary-color), #0056b3);
+}
+
+.btn-success {
+    background: linear-gradient(135deg, var(--success-color), #146c43);
+}
+
+.btn-danger {
+    background: linear-gradient(135deg, var(--danger-color), #b02a37);
+}
+
+/* 表单控件样式 - 浅色主题 */
+.form-control, .form-select {
+    border-radius: var(--border-radius);
+    border: 1px solid #dee2e6;
+    transition: border-color var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+    background-color: #ffffff !important; /* 白色背景 */
+    color: #2c3e50 !important; /* 深灰色文字 */
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+    background-color: #ffffff !important;
+    color: #2c3e50 !important;
+}
+
+/* 表单标签样式 */
+.form-label {
+    color: #1a252f !important; /* 深灰色标签 */
+    font-weight: 500;
+}
+
+/* 单选按钮和复选框标签 */
+.form-check-label {
+    color: #2c3e50 !important; /* 深灰色文字 */
+}
+
+.form-range {
+    height: 6px;
+}
+
+.form-range::-webkit-slider-thumb {
+    background: var(--primary-color);
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.form-range::-moz-range-thumb {
+    background: var(--primary-color);
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* 开关样式 */
+.form-check-input:checked {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+/* 进度条样式 */
+.progress {
+    height: 8px;
+    border-radius: 4px;
+    background-color: #e9ecef;
+}
+
+.progress-bar {
+    border-radius: 4px;
+    background: linear-gradient(90deg, var(--primary-color), #0056b3);
+}
+
+/* 警告框样式 */
+.alert {
+    border-radius: var(--border-radius);
+    border: none;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+
+.alert-info {
+    background: linear-gradient(135deg, #d1ecf1, #bee5eb);
+    color: #0c5460;
+}
+
+.alert-success {
+    background: linear-gradient(135deg, #d4edda, #c3e6cb);
+    color: #155724;
+}
+
+.alert-warning {
+    background: linear-gradient(135deg, #fff3cd, #ffeaa7);
+    color: #856404;
+}
+
+.alert-danger {
+    background: linear-gradient(135deg, #f8d7da, #f5c6cb);
+    color: #721c24;
+}
+
+/* 模态框样式 */
+.modal-content {
+    border-radius: var(--border-radius);
+    border: none;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.modal-header {
+    border-bottom: 1px solid #dee2e6;
+    border-radius: var(--border-radius) var(--border-radius) 0 0;
+}
+
+/* Toast样式 */
+.toast {
+    border-radius: var(--border-radius);
+    border: none;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.toast-header {
+    border-bottom: 1px solid #dee2e6;
+    border-radius: var(--border-radius) var(--border-radius) 0 0;
+}
+
+/* 结果内容样式 */
+#resultContent {
+    font-family: 'Courier New', monospace;
+    line-height: 1.6;
+    background-color: #ffffff;
+    border-radius: var(--border-radius);
+    color: #212529 !important;
+}
+
+/* 灰度层次 - 不同元素使用不同灰度 */
+#resultContent h1, #resultContent h2, #resultContent h3, 
+#resultContent h4, #resultContent h5, #resultContent h6 {
+    color: #1a252f !important; /* 最深灰色 - 标题 */
+    font-weight: 600;
+}
+
+#resultContent p, #resultContent div, #resultContent span {
+    color: #2c3e50 !important; /* 深灰色 - 正文 */
+}
+
+#resultContent code {
+    color: #495057 !important; /* 中灰色 - 代码 */
+    background-color: #e9ecef !important; /* 浅灰背景 */
+}
+
+/* 处理特殊元素 */
+#resultContent page_number,
+#resultContent [style*="color"],
+#resultContent font {
+    color: #6c757d !important; /* 中等灰色 - 特殊元素 */
+    background-color: transparent !important;
+}
+
+/* 灰度层次配色方案 */
+#resultContent {
+    color: #2c3e50 !important; /* 深灰蓝色 - 主要文字 */
+    background-color: #ffffff !important; /* 纯白色背景 */
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid #dee2e6;
+    min-height: 200px;
+}
+
+#resultContent * {
+    color: #2c3e50 !important;
+    background-color: transparent !important;
+}
+
+/* 覆盖任何可能的白色或浅色文字 */
+#resultContent [style*="color: white"],
+#resultContent [style*="color: #ffffff"],
+#resultContent [style*="color: #fff"],
+#resultContent [style*="color:white"],
+#resultContent [style*="color:#ffffff"],
+#resultContent [style*="color:#fff"],
+#resultContent [style*="color: #f"],
+#resultContent [style*="color:#f"] {
+    color: #2c3e50 !important; /* 深灰色替代白色 */
+    background-color: transparent !important;
+}
+
+/* 处理可能的透明文字 */
+#resultContent [style*="opacity"],
+#resultContent [style*="visibility"] {
+    opacity: 1 !important;
+    visibility: visible !important;
+    color: #2c3e50 !important;
+    background-color: transparent !important;
+}
+
+/* 强制覆盖所有可能的颜色和背景冲突 */
+#resultContent {
+    background-color: #ffffff !important;
+}
+
+#resultContent * {
+    background-color: transparent !important;
+}
+
+/* 强制覆盖所有可能的黑色背景 */
+#resultContent *[style*="background"],
+#resultContent *[style*="background-color"] {
+    background-color: transparent !important;
+}
+
+/* 特别处理可能的黑色元素 */
+#resultContent div,
+#resultContent span,
+#resultContent p {
+    background-color: transparent !important;
+    color: #2c3e50 !important;
+}
+
+#resultContent *:not(th):not(td):not(code):not(h1):not(h2):not(h3):not(h4):not(h5):not(h6):not(strong):not(em) {
+    color: #2c3e50 !important;
+    background-color: transparent !important;
+}
+
+/* HTML表格 - 强制白色背景设计 */
+#resultContent table,
+#resultContent table * {
+    background-color: #ffffff !important; /* 强制所有表格元素白色背景 */
+    background-image: none !important;
+    background: none !important;
+}
+
+#resultContent table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1rem;
+    color: #2c3e50 !important; /* 深灰色文字 */
+    background-color: #ffffff !important; /* 纯白背景 */
+    border: 1px solid #dee2e6;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+#resultContent table th {
+    border: 1px solid #ced4da;
+    padding: 0.75rem;
+    text-align: left;
+    color: #1a252f !important; /* 最深灰色 - 表头 */
+    background-color: #f8f9fa !important; /* 浅灰色背景 */
+    font-weight: 600;
+}
+
+#resultContent table td {
+    border: 1px solid #dee2e6;
+    padding: 0.75rem;
+    text-align: left;
+    color: #495057 !important; /* 中灰色 - 表格内容 */
+    background-color: #ffffff !important; /* 纯白背景 */
+}
+
+#resultContent table tr {
+    background-color: #ffffff !important; /* 强制行背景白色 */
+}
+
+#resultContent table tr:nth-child(even) td {
+    background-color: #f8f9fa !important; /* 斑马纹 - 浅灰色 */
+}
+
+#resultContent table tr:nth-child(odd) td {
+    background-color: #ffffff !important; /* 奇数行 - 纯白色 */
+}
+
+#resultContent table code {
+    background-color: #e9ecef;
+    padding: 0.2rem 0.4rem;
+    border-radius: 0.25rem;
+    color: #495057 !important; /* 中灰色代码 */
+}
+
+/* 强制覆盖表格内所有可能的深色背景 */
+#resultContent table *[style*="background"],
+#resultContent table *[style*="background-color"] {
+    background-color: #ffffff !important;
+}
+
+#resultContent table th *[style*="background"],
+#resultContent table th *[style*="background-color"] {
+    background-color: #f8f9fa !important;
+}
+
+/* 强制覆盖所有可能的深色背景值 */
+#resultContent table *[style*="background: black"],
+#resultContent table *[style*="background-color: black"],
+#resultContent table *[style*="background: #000"],
+#resultContent table *[style*="background-color: #000"],
+#resultContent table *[style*="background: #000000"],
+#resultContent table *[style*="background-color: #000000"],
+#resultContent table *[style*="background: rgb(0,0,0)"],
+#resultContent table *[style*="background-color: rgb(0,0,0)"],
+#resultContent table *[style*="background: rgba(0,0,0"],
+#resultContent table *[style*="background-color: rgba(0,0,0"] {
+    background-color: #ffffff !important;
+}
+
+#resultContent table th *[style*="background: black"],
+#resultContent table th *[style*="background-color: black"],
+#resultContent table th *[style*="background: #000"],
+#resultContent table th *[style*="background-color: #000"],
+#resultContent table th *[style*="background: #000000"],
+#resultContent table th *[style*="background-color: #000000"],
+#resultContent table th *[style*="background: rgb(0,0,0)"],
+#resultContent table th *[style*="background-color: rgb(0,0,0)"],
+#resultContent table th *[style*="background: rgba(0,0,0"],
+#resultContent table th *[style*="background-color: rgba(0,0,0"] {
+    background-color: #f8f9fa !important;
+}
+
+#resultContent.preview-mode {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #2c3e50 !important; /* 深灰色主文字 */
+    background-color: #ffffff !important; /* 纯白色背景 */
+    line-height: 1.6;
+}
+
+#resultContent.preview-mode h1,
+#resultContent.preview-mode h2,
+#resultContent.preview-mode h3,
+#resultContent.preview-mode h4,
+#resultContent.preview-mode h5,
+#resultContent.preview-mode h6 {
+    color: #1a252f !important; /* 最深灰色标题 */
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+#resultContent.preview-mode h1 { font-size: 2rem; }
+#resultContent.preview-mode h2 { font-size: 1.75rem; }
+#resultContent.preview-mode h3 { font-size: 1.5rem; }
+#resultContent.preview-mode h4 { font-size: 1.25rem; }
+#resultContent.preview-mode h5 { font-size: 1.1rem; }
+#resultContent.preview-mode h6 { font-size: 1rem; }
+
+#resultContent.preview-mode p {
+    margin-bottom: 1rem;
+    color: #2c3e50 !important; /* 深灰色正文 */
+}
+
+#resultContent.preview-mode div,
+#resultContent.preview-mode span,
+#resultContent.preview-mode li {
+    color: #2c3e50 !important; /* 深灰色正文 */
+}
+
+#resultContent.preview-mode strong {
+    color: #1a252f !important; /* 最深灰色粗体 */
+    font-weight: 600;
+}
+
+#resultContent.preview-mode em {
+    color: #495057 !important; /* 中灰色斜体 */
+    font-style: italic;
+}
+
+#resultContent.preview-mode td,
+#resultContent.preview-mode th {
+    /* 表格颜色由上面的表格样式控制 */
+}
+
+#resultContent.preview-mode code {
+    background-color: #f8f9fa;
+    padding: 0.2rem 0.4rem;
+    border-radius: 0.25rem;
+    font-size: 0.875em;
+}
+
+#resultContent.preview-mode pre {
+    background-color: #f8f9fa;
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    overflow-x: auto;
+    margin-bottom: 1rem;
+}
+
+#resultContent.preview-mode pre code {
+    background-color: transparent;
+    padding: 0;
+}
+
+#resultContent.preview-mode table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1rem;
+}
+
+#resultContent.preview-mode table th,
+#resultContent.preview-mode table td {
+    border: 1px solid #dee2e6;
+    padding: 0.75rem;
+    text-align: left;
+    color: #212529 !important;
+}
+
+#resultContent.preview-mode table th {
+    background-color: #f8f9fa;
+    font-weight: 600;
+    color: #212529 !important;
+}
+
+#resultContent.preview-mode table td {
+    color: #212529 !important;
+}
+
+#resultContent.preview-mode ul,
+#resultContent.preview-mode ol {
+    margin-bottom: 1rem;
+    padding-left: 2rem;
+}
+
+#resultContent.preview-mode blockquote {
+    border-left: 4px solid var(--primary-color);
+    padding-left: 1rem;
+    margin-left: 0;
+    color: #6c757d;
+    font-style: italic;
+}
+
+/* 动画效果 */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease-out;
+}
+
+.slide-in {
+    animation: slideIn 0.3s ease-out;
+}
+
+.pulse {
+    animation: pulse 2s infinite;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .card-body {
+        padding: 1rem;
+    }
+    
+    .upload-area {
+        padding: 1rem;
+    }
+    
+    .upload-content {
+        padding: 2rem 1rem !important;
+    }
+    
+    .display-1 {
+        font-size: 3rem;
+    }
+    
+    .btn {
+        padding: 0.75rem 1rem;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .container-fluid {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
+    
+    .card {
+        margin-bottom: 1rem;
+    }
+    
+    .btn-group {
+        flex-direction: column;
+    }
+    
+    .btn-group .btn {
+        border-radius: var(--border-radius) !important;
+        margin-bottom: 0.25rem;
+    }
+}
+
+/* 强制浅色主题 - 覆盖深色主题 */
+@media (prefers-color-scheme: dark) {
+    /* 强制使用浅色主题，忽略系统深色模式 */
+    :root {
+        --light-color: #f8f9fa;
+        --dark-color: #212529;
+    }
+    
+    body {
+        background-color: #f8f9fa !important;
+        color: #2c3e50 !important;
+    }
+    
+    .card {
+        background-color: #ffffff !important;
+        color: #2c3e50 !important;
+    }
+    
+    .form-control, .form-select {
+        background-color: #ffffff !important;
+        border-color: #dee2e6 !important;
+        color: #2c3e50 !important;
+    }
+    
+    .form-control:focus, .form-select:focus {
+        background-color: #ffffff !important;
+        color: #2c3e50 !important;
+    }
+    
+    #resultContent {
+        background-color: #f8f9fa !important;
+        color: #2c3e50 !important;
+    }
+    
+    #resultContent.preview-mode {
+        color: #2c3e50 !important;
+    }
+    
+    #resultContent.preview-mode h1,
+    #resultContent.preview-mode h2,
+    #resultContent.preview-mode h3,
+    #resultContent.preview-mode h4,
+    #resultContent.preview-mode h5,
+    #resultContent.preview-mode h6 {
+        color: #1a252f !important;
+    }
+    
+    #resultContent.preview-mode p,
+    #resultContent.preview-mode div,
+    #resultContent.preview-mode span,
+    #resultContent.preview-mode td,
+    #resultContent.preview-mode th {
+        color: #2c3e50 !important;
+    }
+    
+    #resultContent.preview-mode code {
+        background-color: #e9ecef !important;
+        color: #495057 !important;
+    }
+    
+    #resultContent.preview-mode pre {
+        background-color: #e9ecef !important;
+        color: #495057 !important;
+    }
+    
+    #resultContent.preview-mode table th {
+        background-color: #e9ecef !important;
+        color: #1a252f !important;
+    }
+    
+    #resultContent.preview-mode table td {
+        color: #495057 !important;
+    }
+}
+
+/* 加载动画 */
+.loading-spinner {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: #fff;
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* 工具提示样式 */
+.tooltip {
+    font-size: 0.875rem;
+}
+
+.tooltip-inner {
+    background-color: var(--dark-color);
+    border-radius: var(--border-radius);
+    padding: 0.5rem 0.75rem;
+}
+
+/* 滚动条样式 */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+}
+
+/* 强制浅色主题覆盖 */
+* {
+    color-scheme: light !important;
+}
+
+/* 确保所有文本元素都有正确的颜色 */
+body, div, span, p, h1, h2, h3, h4, h5, h6, label, input, textarea, select {
+    color: #2c3e50 !important;
+}
+
+/* 确保所有背景都是浅色 */
+body, .card, .card-body, .form-control, .form-select, .upload-area {
+    background-color: #ffffff !important;
+}
+
+/* 打印样式 */
+@media print {
+    .navbar, .footer, .btn, .card-header {
+        display: none !important;
+    }
+    
+    .card {
+        border: none !important;
+        box-shadow: none !important;
+    }
+    
+    #resultContent {
+        max-height: none !important;
+        overflow: visible !important;
+    }
+}
