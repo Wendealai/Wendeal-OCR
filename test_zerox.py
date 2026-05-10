@@ -189,10 +189,6 @@ async def run_full_test():
         return False
 
 if __name__ == "__main__":
-    # 设置API密钥（如果未设置）
-    if not os.environ.get('GEMINI_API_KEY'):
-        os.environ['GEMINI_API_KEY'] = 'AIzaSyBXkCb87xQTY7oyTVMT72UZt_VprvMrG8U'
-    
     # 运行测试
     success = asyncio.run(run_full_test())
     
