@@ -8,6 +8,7 @@ import os
 import sys
 import json
 import asyncio
+import secrets
 import tempfile
 import shutil
 from datetime import datetime
@@ -24,7 +25,11 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'zerox', 'py_ze
 from pyzerox.core.zerox import zerox
 
 app = Flask(__name__)
-app.secret_key = 'zerox_ocr_web_app_secret_key_2025'
+app.secret_key = (
+    os.environ.get('FLASK_SECRET_KEY')
+    or os.environ.get('SECRET_KEY')
+    or secrets.token_urlsafe(32)
+)
 CORS(app)
 
 # 配置
